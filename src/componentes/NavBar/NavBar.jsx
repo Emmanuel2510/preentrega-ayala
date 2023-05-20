@@ -1,12 +1,15 @@
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget'
+import { NavLink, Link } from 'react-router-dom'
 
 const NavBar = () => {
     const imglogo = "../src/assets/buenquilate.png"
   return (
       <header className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-            <img className='imglogo' src={imglogo} alt="Logo" />
+            <Link to={"/"}>
+            <img src={imglogo} alt="Logo" />
+            </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon" />
               </button>
@@ -16,10 +19,10 @@ const NavBar = () => {
             Inicio
             </li>
           <li className="nav-item">
-           Ofertas
+           <NavLink to={"/categoria/2"}> Ofertas </NavLink>
             </li>
           <li className="nav-item">
-            Productos
+          <NavLink to={"/categoria/3"}> Productos </NavLink>
             </li>
           <li className="nav-item">
             Consultas
